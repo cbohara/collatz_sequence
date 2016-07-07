@@ -1,5 +1,3 @@
-# Find the number (n) with the longest collatz sequence
-
 module Collatz
   def self.sequence(input)
     result = []
@@ -17,6 +15,16 @@ module Collatz
     end
     return result
   end
+
+  def self.longest_length(upper_limit)
+    max = 0
+    (1..upper_limit).each do |i|
+      if self.sequence(i).length > max
+        max = self.sequence(i).length
+      end
+    end
+    return max
+  end
 end
 
-#p Collatz.sequence(5)
+#p Collatz.longest_length(7)
