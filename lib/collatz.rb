@@ -16,15 +16,18 @@ module Collatz
     return result
   end
 
-  def self.longest_length(upper_limit)
+  def self.longest(upper_limit)
     max = 0
+    n = 0
     (1..upper_limit).each do |i|
       if self.sequence(i).length > max
         max = self.sequence(i).length
+        max_sequence = self.sequence(i)
+        n = max_sequence[0]
       end
     end
-    return max
+    return n
   end
 end
 
-#p Collatz.longest_length(7)
+#p Collatz.longest(7)

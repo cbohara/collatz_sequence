@@ -7,9 +7,9 @@ RSpec.describe Collatz, type: :model do
     end
   end
 
-  describe 'longest_length method' do
+  describe 'longest method' do
     it 'should return the length of the longest collatz sequence within a range' do
-      expect(Collatz.longest_length(7)).to eq(17)
+      expect(Collatz.longest(1000000)).to eq(837799)
     end
   end
 end
